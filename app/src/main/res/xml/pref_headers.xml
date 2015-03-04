@@ -3,12 +3,12 @@
     <!-- These settings headers are only used on tablets. -->
 
     <header android:fragment="com.haderhesham.estimation.Settings$GeneralPreferenceFragment"
-        android:title="@string/pref_header_general" />
+        android:title="@string/pref_header_gameplay" />
 
-    <header android:fragment="com.haderhesham.estimation.Settings$NotificationPreferenceFragment"
-        android:title="@string/pref_header_notifications" />
+   <!-- <header android:fragment="com.haderhesham.estimation.Settings$NotificationPreferenceFragment"
+        android:title="@string/pref_header_colours" />
 
     <header android:fragment="com.haderhesham.estimation.Settings$DataSyncPreferenceFragment"
-        android:title="@string/pref_header_data_sync" />
-
+        android:title="@string/pref_header_Sa3ayda" />
+    -->
 </preference-headers>

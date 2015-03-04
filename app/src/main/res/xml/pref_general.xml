@@ -1,33 +1,92 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <CheckBoxPreference
-        android:key="example_checkbox"
-        android:title="@string/pref_title_social_recommendations"
-        android:summary="@string/pref_description_social_recommendations"
+        android:key="only_winner"
+        android:title="@string/pref_title_only_winner"
+        android:summary="@string/pref_description_only_winner"
         android:defaultValue="true" />
 
     <!-- NOTE: EditTextPreference accepts EditText attributes. -->
     <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
     <EditTextPreference
-        android:key="example_text"
-        android:title="@string/pref_title_display_name"
-        android:defaultValue="@string/pref_default_display_name"
+        android:dependency="only_winner"
+        android:key="only_winner_score"
+        android:title="@string/pref_only_winner_score"
+        android:defaultValue="10"
         android:selectAllOnFocus="true"
-        android:inputType="textCapWords"
-        android:capitalize="words"
+        android:inputType="number"
         android:singleLine="true"
         android:maxLines="1" />
+    <CheckBoxPreference
+        android:key="only_loser"
+        android:title="@string/pref_title_only_loser"
+        android:summary="@string/pref_description_only_loser"
+        android:defaultValue="false" />
 
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+    <EditTextPreference
+        android:dependency="only_loser"
+        android:key="only_loser_score"
+        android:title="@string/pref_only_loser_score"
+        android:defaultValue="10"
+        android:selectAllOnFocus="true"
+        android:inputType="number"
+        android:singleLine="true"
+        android:maxLines="1" />
+    <CheckBoxPreference
+        android:key="dash_call"
+        android:title="@string/pref_title_dashcall"
+        android:summary="@string/pref_description_dashcall"
+        android:defaultValue="true" />
+
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+    <EditTextPreference
+        android:dependency="dash_call"
+        android:key="dash_call_under_score"
+        android:title="Dash Call score in an under game"
+        android:summary="Enter winning score, losing score is half"
+        android:defaultValue="30"
+        android:selectAllOnFocus="true"
+        android:inputType="number"
+        android:singleLine="true"
+        android:maxLines="1" />
+    <EditTextPreference
+        android:dependency="dash_call"
+        android:key="dash_call_over_score"
+        android:title="Dash Call score in an over game"
+        android:summary="Enter winning score, losing score is half"
+        android:defaultValue="30"
+        android:selectAllOnFocus="true"
+        android:inputType="number"
+        android:singleLine="true"
+        android:maxLines="1" />
+    <CheckBoxPreference
+        android:key="super_call"
+        android:title="@string/pref_title_supercall"
+        android:summary="@string/pref_description_supercall"
+        android:defaultValue="true" />
+    <CheckBoxPreference
+        android:key="3_calls"
+        android:title="@string/pref_title_3calls"
+        android:summary="@string/pref_description_3calls"
+        android:defaultValue="true" />
     <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
          dismiss it. -->
     <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+    <CheckBoxPreference
+        android:key="difference"
+        android:title="@string/pref_title_difference"
+        android:summary="@string/pref_description_difference"
+        android:defaultValue="true" />
     <ListPreference
-        android:key="example_list"
-        android:title="@string/pref_title_add_friends_to_messages"
-        android:defaultValue="-1"
-        android:entries="@array/pref_example_list_titles"
-        android:entryValues="@array/pref_example_list_values"
+        android:dependency="difference"
+        android:key="difference_list"
+        android:title="Estimation Difference Rules"
+        android:defaultValue="1"
+        android:entries="@array/pref_list_difference"
+        android:entryValues="@array/pref_list_difference_values"
         android:negativeButtonText="@null"
         android:positiveButtonText="@null" />
-
 </PreferenceScreen>

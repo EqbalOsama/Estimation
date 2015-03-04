@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="sa3ayda"
+        android:title="@string/pref_title_sa3ayda"
+        android:summary="@string/pref_description_sa3ayda"
+        android:defaultValue="true" />
+    <CheckBoxPreference
+        android:dependency="sa3ayda"
+        android:key="sa3ayda_double"
+        android:title="@string/pref_title_sa3ayda_double"
+        android:summary="@string/pref_description_sa3ayda_double"
+        android:defaultValue="true" />
+    <CheckBoxPreference
+        android:dependency="sa3ayda"
+        android:key="sa3ayda_rep"
+        android:title="@string/pref_title_sa3ayda_rep"
+        android:summary="@string/pref_description_sa3ayda_rep"
+        android:defaultValue="false" />
+</PreferenceScreen>

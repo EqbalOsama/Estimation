@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+    android:key="colours"
+    android:title="@string/pref_title_colours"
+    android:summary="@string/pref_description_colours"
+    android:defaultValue="true" />
+    <CheckBoxPreference
+        android:dependency="colours"
+        android:key="supercall_in"
+        android:title="@string/pref_title_supercall_in"
+        android:summary="@string/pref_description_supercall_in"
+        android:defaultValue="true" />
+    <ListPreference
+        android:dependency="colours"
+        android:key="colours_list"
+        android:title="Colours Bidding Order"
+        android:defaultValue="1"
+        android:entries="@array/pref_list_colours"
+        android:entryValues="@array/pref_list_colours_values"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null" />
+</PreferenceScreen>
